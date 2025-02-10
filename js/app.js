@@ -28,10 +28,13 @@ $(document).ready(function(){
             $display.val("Error en la petición");
           }
         });
+      } else if ($(this).hasClass("backspace")) {
+        // Si se presiona "CE", se borra la última cifra
+        var currentValue = $display.val();
+        $display.val(currentValue.slice(0, -1));
       } else {
         // En cualquier otro caso, se agrega el valor del botón al display
         $display.val($display.val() + value);
       }
     });
   });
-  
